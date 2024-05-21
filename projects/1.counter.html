@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        text-align: center;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      button {
+        width: 90px;
+        height: 60px;
+        font-size: 30px;
+        background-color: green;
+        color: honeydew;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: greenyellow;
+        color: grey;
+      }
+
+      h2 {
+        color: black;
+        margin: 0 50px;
+        font-size: 45px;
+      }
+
+      h1 {
+        font-size: 35px;
+        color: green;
+        text-align: center;
+        padding-left: 10%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h1> Counter</h1>
+      <div class="container">
+        <button onclick="increment()">+</button>
+        <h2 id="counting">0</h2>
+        <button onclick="decrement()">-</button>
+      </div>
+   
+
+    <script>
+      var data = 0; // Initializing a variable named data
+
+      function increment() {
+        // Creation of increment function
+        // data = data + 1;
+        data++;
+        document.getElementById("counting").innerHTML = data;
+      }
+
+      function decrement() {
+        // Creation of decrement function
+        // data = data - 1;
+        data--;
+        document.getElementById("counting").innerHTML = data;
+      }
+    </script>
+  </body>
+</html>

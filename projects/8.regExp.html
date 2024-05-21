@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in</title>
+  </head>
+  <body>
+    <form action="ack.html" onsubmit="return validateForm()">
+      <label for="uName">Username:</label>
+      <input type="text" id="uName" name="username" />
+
+      <label for="pWd">Password:</label>
+      <input type="password" id="pWd" name="password" />
+
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+      function validateForm() {
+        let userName = document.getElementById("uName").value;
+        let passWord = document.getElementById("pWd").value;
+
+        // Regular Expression to validate email
+        const regExEmail = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+
+        if (!regExEmail.test(userName)) {
+          // The test() method returns true if there is a match, indicating that the username input follows
+          //the pattern for a valid email address. If there is no match, it returns false.
+          alert("Enter a Valid email address"); // The ! operator negates the result of the test() method,
+          // so !regExEmail.test(userName) evaluates to true if the username input does not match the email pattern.
+          return;
+        }
+
+        // Regular Expression to validate password
+        const regExPass =
+          /^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%?&])[A-Za-z\d@$!%?&]{8,}$/;
+
+        if (!regExPass.test(passWord)) {
+          alert(
+            "Password should contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character"
+          );
+          window.location.href = "https://task.telangana.gov.in";
+        } else {
+          alert("Registered Successfully");
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>
